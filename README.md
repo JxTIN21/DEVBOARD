@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# ⚡ DevBoard - AI-Powered Developer Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack MERN application that helps developers manage tasks using a Kanban board with AI-powered subtask generation.
 
-## Available Scripts
+## 🚀 Live Demo
+- **Frontend:** [Coming Soon]
+- **Backend:** [Coming Soon]
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- 🔐 **JWT Authentication** — Secure register and login
+- 📋 **Kanban Board** — Drag tasks across Todo, In Progress, and Done columns
+- 🤖 **AI Subtask Generation** — Paste a task description and let AI break it into actionable subtasks using Groq (Llama 3.3)
+- ✅ **Subtask Completion** — Toggle individual subtasks with a progress bar
+- 🎯 **Priority Levels** — Tag tasks as High, Medium, or Low priority
+- 📊 **Dashboard Stats** — Live counts for total, in-progress, completed, and high priority tasks
+- ✏️ **Edit & Delete** — Full CRUD on all tasks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- React.js
+- Axios
+- React Router DOM
+- Context API for state management
 
-### `npm test`
+### Backend
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JSON Web Tokens (JWT)
+- bcryptjs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### AI
+- Groq API (Llama 3.3 70B)
 
-### `npm run build`
+## 📁 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+devboard/
+├── client/          # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── KanbanBoard.js
+│   │   │   ├── TaskCard.js
+│   │   │   └── TaskModal.js
+│   │   ├── context/
+│   │   │   └── AuthContext.js
+│   │   └── pages/
+│   │       ├── Dashboard.js
+│   │       ├── Login.js
+│   │       └── Register.js
+└── server/          # Express backend
+    ├── middleware/
+    │   └── auth.js
+    ├── models/
+    │   ├── Task.js
+    │   └── User.js
+    ├── routes/
+    │   ├── auth.js
+    │   └── tasks.js
+    └── index.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Local Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Node.js
+- MongoDB
+- Groq API Key — [Get one free at console.groq.com](https://console.groq.com)
 
-### `npm run eject`
+### 1. Clone the repo
+```bash
+git clone https://github.com/JxTIN21/devboard.git
+cd devboard
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Setup Backend
+```bash
+cd server
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a `.env` file in the `server` folder:
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/devboard
+JWT_SECRET=your_secret_key_here
+GROQ_API_KEY=your_groq_api_key_here
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+node index.js
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Setup Frontend
+```bash
+cd client
+npm install
+npm start
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔑 Environment Variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Variable | Description |
+|----------|-------------|
+| `PORT` | Backend server port (default 5000) |
+| `MONGO_URI` | MongoDB connection string |
+| `JWT_SECRET` | Secret key for JWT signing |
+| `GROQ_API_KEY` | Your Groq API key |
+| `CLIENT_URL` | Frontend URL for CORS (production) |
 
-### Code Splitting
+## 👨‍💻 Author
+**Jatin Srivastava**
+- GitHub: [@JxTIN21](https://github.com/JxTIN21)
+- LinkedIn: [Jatin Srivastava](https://linkedin.com/in/jatin-srivastava-784223253)
+- Portfolio: [Portfolio](https://unrivaled-frangollo-12da7c.netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📄 License
+MIT
