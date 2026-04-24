@@ -10,7 +10,7 @@ export default function TaskModal({ token, onTaskCreated, onClose }) {
   const generateSubtasks = async () => {
     setAiLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/tasks/generate-subtasks',
+      const res = await axios.post('https://devboard-backend-dmrg.onrender.com/api/tasks/generate-subtasks',
         { title: form.title, description: form.description },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -24,7 +24,7 @@ export default function TaskModal({ token, onTaskCreated, onClose }) {
   const handleCreate = async () => {
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/tasks',
+      const res = await axios.post('https://devboard-backend-dmrg.onrender.com/api/tasks',
         { ...form, subtasks },
         { headers: { Authorization: `Bearer ${token}` } }
       );

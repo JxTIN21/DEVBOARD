@@ -22,7 +22,7 @@ export default function TaskCard({ task, onStatusChange, onDelete, onEdit }) {
 
   const handleEdit = async () => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/tasks/${task._id}`,
+      const res = await axios.put(`https://devboard-backend-dmrg.onrender.com/api/tasks/${task._id}`,
         form, { headers: { Authorization: `Bearer ${token}` } }
       );
       onEdit(res.data);
@@ -34,7 +34,7 @@ export default function TaskCard({ task, onStatusChange, onDelete, onEdit }) {
     const updated = subtasks.map((s, i) => i === index ? { ...s, completed: !s.completed } : s);
     setSubtasks(updated);
     try {
-      const res = await axios.put(`http://localhost:5000/api/tasks/${task._id}`,
+      const res = await axios.put(`https://devboard-backend-dmrg.onrender.com/api/tasks/${task._id}`,
         { subtasks: updated }, { headers: { Authorization: `Bearer ${token}` } }
       );
       onEdit(res.data);

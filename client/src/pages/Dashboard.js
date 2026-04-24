@@ -11,7 +11,7 @@ export default function Dashboard() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/tasks', {
+      const res = await axios.get('https://devboard-backend-dmrg.onrender.com/api/tasks', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTasks(res.data);
@@ -29,7 +29,7 @@ export default function Dashboard() {
 
   const handleStatusChange = async (taskId, newStatus) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/tasks/${taskId}`,
+      const res = await axios.put(`https://devboard-backend-dmrg.onrender.com/api/tasks/${taskId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -41,7 +41,7 @@ export default function Dashboard() {
 
   const handleDelete = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
+      await axios.delete(`https://devboard-backend-dmrg.onrender.com/api/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTasks(tasks.filter(t => t._id !== taskId));
