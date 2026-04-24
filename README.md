@@ -3,8 +3,8 @@
 A full-stack MERN application that helps developers manage tasks using a Kanban board with AI-powered subtask generation.
 
 ## 🚀 Live Demo
-- **Frontend:** [Coming Soon]
-- **Backend:** [Coming Soon]
+- **Frontend: https://devboard-kohl.vercel.app/
+- **Backend: https://devboard-backend-dmrg.onrender.com
 
 ## ✨ Features
 
